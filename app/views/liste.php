@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Suivi des livraisons</title>
   <link rel="stylesheet" href="<?= BASE_URL ?>/assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"> -->
   <link rel="stylesheet" href="<?= BASE_URL ?>/assets/CSS/style.css">
 </head>
 <body class="app-body">
@@ -30,9 +30,14 @@
           <small class="text-muted">Statut, coûts et chiffre d'affaires par tournée.</small>
         </div>
       </div>
-      <a class="btn btn-outline-primary" href="<?= BASE_URL ?>/">
-        <i class="bi bi-plus-lg me-1"></i> Planifier une nouvelle livraison
-      </a>
+      <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary" href="<?= BASE_URL ?>/benefices">
+          <i class="bi bi-cash-coin me-1"></i> Bénéfices
+        </a>
+        <a class="btn btn-outline-primary" href="<?= BASE_URL ?>/">
+          <i class="bi bi-plus-lg me-1"></i> Planifier une nouvelle livraison
+        </a>
+      </div>
     </div>
   </header>
 
@@ -89,7 +94,8 @@
                 <th class="text-end">Carburant (Ar)</th>
                 <th class="text-end">Salaire (Ar)</th>
                 <th class="text-end">Coût de revient (Ar)</th>
-                <th class="text-end">Poids total (Kg)</th>
+                <th class="text-end">Poids du Colis (Kg)</th>
+                <th class="text-end">Prix du Colis (Kg)</th>
                 <th class="text-end">Chiffre d'affaires (Ar)</th>
               </tr>
             </thead>
@@ -102,7 +108,7 @@
                     <td><?php echo $livraison['adresse_de_destination']; ?></td>
                     <td><i class="bi bi-person-check me-1 text-success"></i><?php echo $livraison['nom']; ?></td>
                     <td>
-                      <span class="badge bg-<?php echo strtolower($livraison['Etat']) === 'livrée' ? 'success' : 'secondary'; ?>">
+                      <span class="badge bg-<?php echo strtolower($livraison['Etat']) === 'livre' ? 'success' : 'secondary'; ?>">
                         <?php echo $livraison['Etat']; ?>
                       </span>
                     </td>
@@ -110,6 +116,7 @@
                     <td class="text-end"><?php echo number_format($livraison['salaire'], 0, ',', ' '); ?></td>
                     <td class="text-end"><?php echo number_format($livraison['cout_de_revient'], 0, ',', ' '); ?></td>
                     <td class="text-end"><?php echo $livraison['poids']; ?></td>
+                    <td class="text-end"><?php echo $livraison['prix']; ?></td>
                     <td class="text-end fw-semibold text-success"><?php echo number_format($livraison['CA'], 0, ',', ' '); ?></td>
                   </tr>
                 <?php } ?>

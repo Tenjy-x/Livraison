@@ -18,9 +18,14 @@
           <small class="text-muted">Affecter un chauffeur, un véhicule et un colis en un instant.</small>
         </div>
       </div>
-      <a class="btn btn-outline-primary" href="<?= BASE_URL ?>/liste">
+      <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary" href="<?= BASE_URL ?>/benefices">
+          <i class="bi bi-cash-coin me-1"></i> Bénéfices
+        </a>
+        <a class="btn btn-outline-primary" href="<?= BASE_URL ?>/liste">
         <i class="bi bi-list-task me-1"></i> Voir les livraisons
-      </a>
+        </a>
+      </div>
     </div>
   </header>
 

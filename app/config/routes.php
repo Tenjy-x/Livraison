@@ -17,6 +17,8 @@ $router->group('', function(Router $router) use ($app) {
 
 	$router->get('/liste', [LivraisonController::class , 'getAllLivraison']);
 	$router->post('/insert', [LivraisonController::class , 'insertLivraison']);
+	$router->get('/benefices', [LivraisonController::class , 'showBenefices']);
+	$router->post('/benefices', [LivraisonController::class , 'showBenefices']);
 
 	// $router->get('/produit/@id', function($id) use ($app) {
 	// 	$app->render('produit', ['id' => $id]);
