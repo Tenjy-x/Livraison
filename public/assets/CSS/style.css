@@ -1,0 +1,20 @@
+.body{
+  background-color: rgb(85, 173, 85);
+}
+
+.logo {
+  border: solid black 1px;
+}
+/* div {
+  border: solid black 1px;
+} */
+
+.inscription{
+  background:linear-gradient(to bottom ,rgb(4, 12, 128) , rgb(65, 115, 173),  rgb(4, 12, 128))  ;
+}
+input{
+  border: 1px solid rgb(204, 189, 189);
+}
+
+
+

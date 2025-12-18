@@ -1,0 +1,66 @@
+Base.sql:
+  [ok] Creation des tables (Harena):
+    - Zone(id_zone, secteur);
+    - Entrepot(id_entrepot, adresse);
+    - Vehicule(id_vehicule, Matricule);
+    - Livreurs(id_livreur, nom, salaire, id_zone);
+    - Colis(id_colis, nom_colis, poids);
+    - Mvt_jour(id_mvt_jour, id_livreur, id_vehicule, jour);
+    - Livraison(id_livraison, id_colis, id_zone, id_mvt_jour, id_entrepot, adresse_de_destination, id_status , date_livraison, cout_livraison , carburant);
+    - Statut(id_status , etat);
+  [ok] Creation vuee(Tendry):
+    -V_mvt_Livreur_vehicule
+
+  [ok] Insertion(Tendry):
+    -Creer et inserer les donnees dans la base;
+
+index.php: (Tendry)
+  Design
+    [ok]- tableau pour afficher tous les livraisons
+    [ok]- Formulaire : action -> insert  
+        Form
+          - Selection des Colis 
+          - Selection du Livreurs
+          - Selection du Vehicule
+          - Date livraison
+          - Etat colis
+          - Entrepot
+          - secteur
+          - ... 
+  
+  integration
+    [ok]- affichage de tous les livraisons
+    [ok]- affichage de cout de revient
+    [ok]- affichage du chiffre d'affaire
+    [ok]- affichage des Chauffeurs , Colis , Status , Vehicules sur les Selects
+    
+
+LivraisonModel.php: (Tendry)
+  fonction
+    [ok]- getAllLivraison()
+    [ok]- getLivreurs()
+    [ok]- getColis()
+    [ok]- getVehicules()
+    [ok]- getZone()
+    [ok]- getEntrepot()
+    [ok]- insertLivraison()
+    [ok]- getLivreurByID()
+LivraisonController.php: (Harena)
+  fonction
+    [ok]- getAllLivraison()
+    [ok]- getAllLivraisonIndex()//dirige vers index.php
+    [ok]- insertLivraison()
+
+
+affichageBenefice.php (Tendry)
+  Design
+    - Formulaire pour saisir la Date (jour mois annee)
+  
+  fonction 
+    - getBenefice()
+  
+  integration
+    - affichage Benefice pour la date selectionnee
+
+
+
