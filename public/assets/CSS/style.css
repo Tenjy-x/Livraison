@@ -1,20 +1,55 @@
-.body{
-  background-color: rgb(85, 173, 85);
+:root {
+  --primary: #0d6efd;
+  --bg: #f5f7fb;
+  --card: #ffffff;
 }
 
-.logo {
-  border: solid black 1px;
-}
-/* div {
-  border: solid black 1px;
-} */
-
-.inscription{
-  background:linear-gradient(to bottom ,rgb(4, 12, 128) , rgb(65, 115, 173),  rgb(4, 12, 128))  ;
-}
-input{
-  border: 1px solid rgb(204, 189, 189);
+.app-body {
+  background: radial-gradient(circle at 10% 20%, #e5f0ff, #f5f7fb 35%),
+              radial-gradient(circle at 90% 10%, #f3e8ff, #f5f7fb 45%),
+              var(--bg);
+  min-height: 100vh;
 }
 
+.card {
+  border: 1px solid #eef1f7;
+  border-radius: 14px;
+}
 
+.stat-card {
+  background: var(--card);
+  border: 1px solid #eef1f7;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+}
+
+.form-select,
+.form-control {
+  border-radius: 10px;
+}
+
+.badge {
+  letter-spacing: 0.2px;
+}
+
+.table th {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.table td {
+  font-size: 0.95rem;
+}
