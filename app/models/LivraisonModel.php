@@ -51,16 +51,6 @@
       return $stmt->fetchAll();
     }
 
-    /**
-     * Version simple (niveau 1ère année) : agrège par jour, mois ou année
-     * selon les paramètres fournis. Pas de switch, pas de preg_match.
-     *
-     * Règle :
-     * - si $jour est donné -> groupage jour + filtre sur ce jour
-     * - sinon si $mois est donné -> groupage mois + filtre sur ce mois
-     * - sinon si $annee est donnée -> groupage année + filtre sur cette année
-     * - sinon -> groupage jour (pas de filtre)
-     */
     public function getBeneficesParPeriode($jour = null, $mois = null, $annee = null) {
       $periodeValue = "DATE(L.date_livraison)";
       $periodeLabel = "DATE(L.date_livraison)";
@@ -77,6 +67,9 @@
       }
 
       $where = [];
+
+      $where[] = "L.id_statut NOT IN (2, 3)";
+
       if (!empty($jour)) {
         $where[] = "DATE(L.date_livraison) = '" . $jour . "'";
       }
